@@ -28,6 +28,13 @@
     color: #61dafb;
 }
 
+.App-body {
+    margin: 0 5%;
+}
+.App-body p {
+    text-align: justify;
+}
+
 @keyframes App-logo-spin {
     from {
         transform: rotate(0deg);
