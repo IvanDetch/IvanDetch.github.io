@@ -8,8 +8,8 @@
   "scripts": {
     "start": "webpack serve --mode development",
     "build": "webpack --mode production",
-    "predeploy": "npm run build",
-    "deploy": "npx gh-pages -d dist",
+    "predeploy": "npm run build-storybook",
+    "deploy": "npx gh-pages -d storybook-static",
     "test": "jest src",
     "lint": "eslint src --fix",
     "storybook": "storybook dev -p 6006",

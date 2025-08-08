@@ -1,8 +1,8 @@
 import React, { FC } from 'react';
 import s from './Logo.module.css';
-import { LogoProps } from '../../types';
+import { LogoProps, Sizes } from '../../types';
 
-const Logo: React.FC<LogoProps> = ({ size = 'medium' }) => {
+const Logo: React.FC<LogoProps> = ({ size = Sizes.medium }) => {
   return (
     <div className={`${s.logoContainer} ${s[size]}`}>
       <div className={s.logoCircle}></div>

@@ -11,24 +11,21 @@ export interface LayoutProps {
 }
 
 // UI component interfaces
-
-export interface LogoProps {
-  size?: 'small' | 'medium' | 'large';
-  children?: React.ReactNode;
+export enum Sizes {
+  small = 'small',
+  medium = 'medium',
+  large = 'large',
 }
 
-export interface ButtonProps {
-  primary?: boolean;
-  backgroundColor?: string;
-  size?: 'small' | 'medium' | 'large';
-  label: string;
-  onClick?: () => void;
+export interface LogoProps {
+  size?: Sizes;
+  children?: React.ReactNode;
 }
 
 export interface ModalProps {
   visible: boolean;
-  onClose: () => void;
   children?: React.ReactNode;
+  onClose: () => void;
 }
 
 // Transaction component
