@@ -36,17 +36,22 @@ export const Default: Story = {
   },
 };
 
-const Template: Story = (args) => (
-  <Header className={args.className}>
-    <div dangerouslySetInnerHTML={{ __html: args.children }} />
-  </Header>
-);
-
-export const Playground = Template.bind({});
-Playground.args = {
-  className: '',
-  children: `<nav>
-    <a href="#">Главная</a> | 
-    <a href="#">О нас</a>
-  </nav>`,
+export const Playground: Story = {
+  args: {
+    className: '',
+    children: `<nav>
+      <a href="#">Главная</a> |
+      <a href="#">О нас</a>
+    </nav>`,
+  },
+  render: (args) => {
+    const { className, children } = args;
+    // Convert children to HTML if it's a string
+    const html = typeof children === 'string' ? children : '';
+    return (
+      <Header className={className}>
+        <div dangerouslySetInnerHTML={{ __html: html }} />
+      </Header>
+    );
+  },
 };
