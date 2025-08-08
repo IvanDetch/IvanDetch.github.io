@@ -1,0 +1,52 @@
+.logoContainer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  user-select: none;
+}
+
+.logoCircle {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #4b6cb7, #182848);
+}
+
+.logoText {
+  font-weight: 600;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+/* Размеры */
+.small .logoCircle {
+  width: 20px;
+  height: 20px;
+}
+
+.small .logoText {
+  font-size: 1rem;
+}
+
+.medium .logoCircle {
+  width: 28px;
+  height: 28px;
+}
+
+.medium .logoText {
+  font-size: 1.25rem;
+}
+
+.large .logoCircle {
+  width: 36px;
+  height: 36px;
+}
+
+.large .logoText {
+  font-size: 1.75rem;
+}
