@@ -1,6 +1,7 @@
 import React from 'react';
 import Layout from './Layout';
 import type { Meta, StoryObj } from '@storybook/react';
+import { useTranslation } from 'react-i18next';
 
 const meta: Meta<typeof Layout> = {
   title: 'Components/Layout/Layout',
@@ -20,31 +21,34 @@ const meta: Meta<typeof Layout> = {
 export default meta;
 type Story = StoryObj<typeof Layout>;
 
-const defaultChildren = (
-  <div>
-    <h1>Добро пожаловать в интерфейс OTUS</h1>
-    <p>Этот макет включает прилипший Header с логотипом и областью контента ниже.</p>
-    <p>Вы можете использовать этот Layout для страниц дашбордов, профиля, каталога и др.</p>
-  </div>
-);
+const DefaultChildren = () => {
+  const { t } = useTranslation();
+  return (
+    <div style={{ background: 'var(--panel)', padding: 16, borderRadius: 12 }}>
+      <h1>{t('layout.contentTitle')}</h1>
+      <p>{t('layout.contentText')}</p>
+    </div>
+  );
+};
 
 const longChildren = (
   <div>
-    <h1>Прокрутка и фиксированный Header</h1>
-    <p>Ниже находятся секции, каждая с уникальным содержимым.</p>
+    <h1 style={{ color: 'black' }}>Прокрутка и фиксированный Header</h1>
+    <p style={{ color: 'black' }}>Ниже находятся секции, каждая с уникальным содержимым.</p>
     {Array.from({ length: 5 }, (_, i) => (
       <section
         key={i}
         style={{
           margin: '20px 0',
           padding: '20px',
-          background: i % 2 === 0 ? '#ffffff' : '#f9fafb',
+          background: 'var(--panel)',
+          borderColor: 'var(--border)',
           borderRadius: '12px',
           boxShadow: '0 2px 8px rgba(0, 0, 0, 0.05)',
         }}
       >
-        <h2>Секция {i + 1}</h2>
-        <p>
+        <h2 style={{ color: 'var(--text)' }}>Секция {i + 1}</h2>
+        <p style={{ color: 'var(--text)' }}>
           Это демонстрация длинного контента. Прокрутите вниз и убедитесь, что Header остаётся на месте.
         </p>
       </section>
@@ -54,7 +58,7 @@ const longChildren = (
 
 export const Default: Story = {
   args: {
-    children: defaultChildren,
+    children: <DefaultChildren />,
   },
 };
 

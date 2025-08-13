@@ -6,6 +6,8 @@ export { Layout } from './layout/Layout';
 // UI Components
 export { Logo } from './ui/Logo';
 export { Modal } from './ui/Modal';
+export { LanguageToggle } from './ui/LanguageToggle';
+export { ThemeToggle } from './ui/ThemeToggle';
 
 // E-commerce Components
 export { AddToCartButton } from './ecommerce/AddToCartButton';

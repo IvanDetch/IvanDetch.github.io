@@ -1,6 +1,9 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import Header from './Header';
+import { ThemeProvider } from '../../../shared/providers/ThemeProvider/ThemeProvider';
+import LocalizationProvider from '../../../shared/providers/LocalizationProvider/LocalizationProvider';
+import '../../../shared/providers/ThemeProvider/theme.css';
 
 const meta: Meta<typeof Header> = {
   title: 'Components/Layout/Header',
@@ -14,6 +17,15 @@ const meta: Meta<typeof Header> = {
       },
     },
   },
+  decorators: [
+    (Story) => (
+      <LocalizationProvider>
+        <ThemeProvider>
+          <Story />
+        </ThemeProvider>
+      </LocalizationProvider>
+    ),
+  ],
   argTypes: {
     children: {
       control: 'text',
@@ -40,7 +52,7 @@ export const Playground: Story = {
   args: {
     className: '',
     children: `<nav>
-      <a href="#">Главная</a> |
+      <a href="#">Главная</a>
       <a href="#">О нас</a>
     </nav>`,
   },
