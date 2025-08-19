@@ -25,7 +25,7 @@ export interface LogoProps {
 export interface ModalProps {
   visible: boolean;
   children?: React.ReactNode;
-  onClose: () => void;
+  onClose?: () => void;
 }
 
 // Transaction component
@@ -42,6 +42,28 @@ export interface TransactionBrief extends Transaction {
 
 export interface TransactionFull extends TransactionBrief {
   date: string;
+}
+
+export interface Operation {
+  id: string;
+  amount: number;
+  category: string;
+  name: string;
+  description: string;
+  date: string; // ISO
+}
+
+export interface OperationItemProps {
+  operation: Operation;
+}
+
+export interface OperationFullProps extends OperationItemProps {}
+
+export interface OperationListProps {
+  items?: Operation[];
+  pageSize?: number;
+  useInfinite?: boolean;
+  unlimited?: boolean;
 }
 
 // Ecommerce component
@@ -73,4 +95,12 @@ export interface ProductFullProps {
 
 export interface CartItemProps {
   item: CartItem;
+}
+
+export interface ProductListProps {
+  items?: Product[];
+  pageSize?: number;
+  useInfinite?: boolean;
+  /** отключить верхний предел (по умолчанию лимит 200 эл-тов для демо) */
+  unlimited?: boolean; 
 }

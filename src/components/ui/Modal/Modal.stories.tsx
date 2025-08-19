@@ -15,8 +15,8 @@ const meta: Meta<typeof Modal> = {
       control: 'boolean',
       description: 'Управляет видимостью модального окна',
     },
-    onClose: { action: 'closed' },
     children: { control: 'text' },
+    onClose: { action: 'closed' },
   },
 };
 
@@ -25,14 +25,14 @@ type Story = StoryObj<typeof Modal>;
 
 export const Basic: Story = {
   args: {
-    visible: true,
+    visible: false,
     children: 'Пример содержимого модального окна'
   },
 };
 
 export const WithToggle: Story = {
   render: (args) => {
-    const [open, setOpen] = useState(true);
+    const [open, setOpen] = useState(false);
 
     return (
       <>
@@ -42,6 +42,8 @@ export const WithToggle: Story = {
     );
   },
   args: {
-    children: 'Это модальное окно можно закрыть нажатием на крестик'
+    visible: false,
+    children: 'Это модальное окно можно закрыть нажатием на крестик',
+    onClose() { () => true } 
   }
 };

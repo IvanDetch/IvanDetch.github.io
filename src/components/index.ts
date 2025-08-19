@@ -19,5 +19,10 @@ export { ProductFull } from './ecommerce/ProductFull';
 export { TransactionBrief } from './finance/Transaction/TransactionBrief';
 export { TransactionFull } from './finance/Transaction/TransactionFull';
 
+// Opertions
+export { Operation } from './finance/Operations/Operation';
+export { OperationFull } from './finance/Operations/OperationFull';
+export { OperationList } from './finance/Operations/OperationList';
+
 // Types
 export * from './types';
