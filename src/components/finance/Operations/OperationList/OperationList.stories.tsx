@@ -1,4 +1,3 @@
-
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
 import { OperationList } from '.';
@@ -28,6 +27,13 @@ export const Default: Story = {
   } as any,
   render: (args) => {
     const items = Array.from({ length: (args as any).generatedCount }, () => createRandomOperation());
-    return <OperationList items={items} pageSize={(args as any).pageSize} useInfinite={(args as any).useInfinite} unlimited={(args as any).unlimited} />;
+    return (
+      <OperationList
+        items={items}
+        pageSize={(args as any).pageSize}
+        useInfinite={(args as any).useInfinite}
+        unlimited={(args as any).unlimited}
+      />
+    );
   },
 };

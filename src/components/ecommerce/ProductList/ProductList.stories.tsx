@@ -29,6 +29,13 @@ export const Default: Story = {
   } as any,
   render: (args) => {
     const items = Array.from({ length: (args as any).generatedCount }, () => createRandomProduct());
-    return <ProductList items={items} pageSize={(args as any).pageSize} useInfinite={(args as any).useInfinite} unlimited={(args as any).unlimited} />;
+    return (
+      <ProductList
+        items={items}
+        pageSize={(args as any).pageSize}
+        useInfinite={(args as any).useInfinite}
+        unlimited={(args as any).unlimited}
+      />
+    );
   },
 };

@@ -1,4 +1,3 @@
-
 import React from 'react';
 import s from './Operation.module.css';
 import { OperationItemProps } from '../../../types';

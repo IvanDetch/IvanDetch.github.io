@@ -3,7 +3,6 @@ import React from 'react';
 import ThemeToggle from './ThemeToggle';
 import { ThemeProvider } from '../../../shared/providers/ThemeProvider/ThemeProvider';
 import '../../../shared/providers/ThemeProvider/theme.css';
-
 const meta: Meta<typeof ThemeToggle> = {
   title: 'Components/UI/ThemeToggle',
   component: ThemeToggle,
@@ -18,7 +17,5 @@ const meta: Meta<typeof ThemeToggle> = {
   ],
 };
 export default meta;
-
 type Story = StoryObj<typeof ThemeToggle>;
-
 export const Default: Story = { args: {} };

@@ -1,4 +1,3 @@
-
 import React from 'react';
 import s from './OperationFull.module.css';
 import { OperationFullProps } from '../../../types';
@@ -9,7 +8,11 @@ const OperationFull: React.FC<OperationFullProps> = ({ operation }) => {
   const amountCls = [s.amount, isIncome ? s.income : s.expense].join(' ');
   const formattedAmount = `${sign}${Math.abs(operation.amount).toLocaleString('ru-RU')} ₽`;
   const formattedDate = new Date(operation.date).toLocaleString('ru-RU', {
-    day: '2-digit', month: 'long', year: 'numeric', hour: '2-digit', minute: '2-digit',
+    day: '2-digit',
+    month: 'long',
+    year: 'numeric',
+    hour: '2-digit',
+    minute: '2-digit',
   });
 
   return (
@@ -24,7 +27,6 @@ const OperationFull: React.FC<OperationFullProps> = ({ operation }) => {
         </div>
         <div className={amountCls}>{formattedAmount}</div>
       </div>
-
       <div className={s.row}>
         <div className={s.label}>Название</div>
         <div className={s.value}>{operation.name}</div>
@@ -41,13 +43,13 @@ const OperationFull: React.FC<OperationFullProps> = ({ operation }) => {
         <div className={s.label}>Дата</div>
         <div className={s.value}>
           <time dateTime={operation.date}>{formattedDate}</time>
-          </div>
+        </div>
       </div>
       <div className={s.row}>
         <div className={s.label}>Описание</div>
         <div className={s.value}>
           <textarea className={s.textarea} disabled value={operation.description} />
-          </div>
+        </div>
       </div>
     </section>
   );

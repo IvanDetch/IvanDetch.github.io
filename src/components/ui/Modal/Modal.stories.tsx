@@ -26,7 +26,7 @@ type Story = StoryObj<typeof Modal>;
 export const Basic: Story = {
   args: {
     visible: false,
-    children: 'Пример содержимого модального окна'
+    children: 'Пример содержимого модального окна',
   },
 };
 
@@ -44,6 +44,8 @@ export const WithToggle: Story = {
   args: {
     visible: false,
     children: 'Это модальное окно можно закрыть нажатием на крестик',
-    onClose() { () => true } 
-  }
+    onClose() {
+      () => true;
+    },
+  },
 };
