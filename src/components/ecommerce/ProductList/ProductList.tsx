@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useRef, useState, memo, useCallback } from 'react';
+import React, { useEffect, useRef, useState, memo, useCallback } from 'react';
 import styles from './ProductList.module.css';
 import { Product, ProductListProps } from '../../types';
 import { ProductBrief } from '../ProductBrief';

@@ -81,6 +81,12 @@
   margin-bottom: 2px;
 }
 
+.actions{
+  margin-top:8px;
+  display:flex;
+  gap:8px;
+}
+
 /* Адаптивность */
 @media (max-width: 768px) {
   .imageContainer {

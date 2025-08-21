@@ -10,10 +10,11 @@ export { LanguageToggle } from './ui/LanguageToggle';
 export { ThemeToggle } from './ui/ThemeToggle';
 
 // E-commerce Components
-export { AddToCartButton } from './ecommerce/AddToCartButton';
-export { CartItem } from './ecommerce/CartItem';
+export { AddToCartButton, AddToCartButtonPattern } from './ecommerce/AddToCartButton';
+export { CartItem, CartItemPattern } from './ecommerce/CartItem';
 export { ProductBrief } from './ecommerce/ProductBrief';
 export { ProductFull } from './ecommerce/ProductFull';
+export { ProductList, ProductListPattern } from './ecommerce/ProductList';
 
 // Transaction Components
 export { TransactionBrief } from './finance/Transaction/TransactionBrief';
@@ -26,3 +27,4 @@ export { OperationList } from './finance/Operations/OperationList';
 
 // Types
 export * from './types';
+export { List } from './patterns/List';

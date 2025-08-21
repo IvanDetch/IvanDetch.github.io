@@ -1,18 +1,32 @@
-import React, { memo } from 'react';
+import React, { memo, useState } from 'react';
 import styles from './ThemeToggle.module.css';
 import { useTheme } from '../../../shared/providers/ThemeProvider/ThemeProvider';
+import { ThemeToggleProps } from '../../types';
 
-const ThemeToggle: React.FC = () => {
+const ThemeToggle: React.FC<ThemeToggleProps> = ({ checked, defaultChecked = false, onChange }) => {
   const { theme, toggleTheme } = useTheme();
+  const controlled = typeof checked === 'boolean';
+  const [inner, setInner] = useState(defaultChecked);
+  const val = controlled ? checked! : theme === 'dark';
+
+  const onClick = () => {
+    if (controlled) {
+      onChange?.(!val);
+    } else {
+      setInner(v => !v);
+      toggleTheme();
+    }
+  };
+
   return (
     <button
       type="button"
-      onClick={toggleTheme}
+      onClick={onClick}
       className={styles.toggle}
       aria-label="Toggle color scheme"
-      title={theme === 'light' ? 'Светлая тема' : 'Тёмная тема'}
+      title={val ? 'Светлая тема' : 'Тёмная тема'}
     >
-      {theme === 'light' ? '🌞' : '🌙'}
+      {val ? '🌞' : '🌙'}
     </button>
   );
 };

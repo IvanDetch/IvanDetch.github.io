@@ -3,7 +3,7 @@ import AddToCartButton from '../AddToCartButton/AddToCartButton';
 import { ProductBriefProps } from '../../types';
 import s from './ProductBrief.module.css';
 
-const ProductBrief: React.FC<ProductBriefProps> = ({ product, maxDescriptionLength = 80 }) => {
+const ProductBrief: React.FC<ProductBriefProps & React.HTMLAttributes<HTMLDivElement>> = ({ product, maxDescriptionLength = 80, children, ...rest }) => {
   const { name, description, price, image } = product;
 
   const truncatedDesc =
@@ -25,7 +25,7 @@ const ProductBrief: React.FC<ProductBriefProps> = ({ product, maxDescriptionLeng
 
         <div className={s.footerRow}>
           <div className={s.unitPrice}>{price.toLocaleString('ru-RU')} ₽</div>
-          <AddToCartButton count={0} />
+          {children ?? <AddToCartButton count={0} />}
         </div>
       </div>
     </div>

@@ -120,6 +120,27 @@
   color: #27ae60;
 }
 
+.removeButton {
+  background:none;
+  border:none;
+  font-size:20px;
+  line-height:1;
+  cursor:pointer;
+}
+
+.counterWrapper {
+  display:flex;
+  align-items:center;gap:8px;
+}
+.counter {
+  color: black;
+}
+
+.changeButton {
+  padding:4px 8px;
+  cursor:pointer;
+}
+
 /* Адаптивность */
 @media (max-width: 768px) {
   .itemContainer {
