@@ -123,7 +123,12 @@ export interface CartItemEnhancedProps extends CartItemProps {
   /** отключить кнопку удаления */
   disableRemove?: boolean;
   /** заменить блок действий своим рендером */
-  renderActions?: (controls: { value: number; inc: () => void; dec: () => void; remove: () => void }) => React.ReactNode;
+  renderActions?: (controls: {
+    value: number;
+    inc: () => void;
+    dec: () => void;
+    remove: () => void;
+  }) => React.ReactNode;
 }
 
 export interface ProductListProps {
@@ -131,7 +136,7 @@ export interface ProductListProps {
   pageSize?: number;
   useInfinite?: boolean;
   /** отключить верхний предел (по умолчанию лимит 200 эл-тов для демо) */
-  unlimited?: boolean; 
+  unlimited?: boolean;
 }
 
 export interface ProductListPatternProps {

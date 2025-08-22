@@ -28,3 +28,8 @@ export { OperationList } from './finance/Operations/OperationList';
 // Types
 export * from './types';
 export { List } from './patterns/List';
+
+// Complex Components
+export { ComponentInfo } from './complex/ComponentInfo';
+export { CroppedText } from './complex/CroppedText';
+export { InfinityList } from './complex/InfinityList';

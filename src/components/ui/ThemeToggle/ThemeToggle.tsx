@@ -7,7 +7,7 @@ const ThemeToggle: React.FC<ThemeToggleProps> = ({ checked, defaultChecked = fal
   const { theme, toggleTheme } = useTheme();
   const controlled = typeof checked === 'boolean';
   const [inner, setInner] = useState(defaultChecked);
-  const val = controlled ? checked! : theme === 'dark';
+  const val = controlled ? checked! : theme === 'light';
 
   const onClick = () => {
     if (controlled) {
