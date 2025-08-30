@@ -4,7 +4,8 @@ import { useTranslation } from 'react-i18next';
 
 const LanguageToggle: React.FC = () => {
   const { i18n } = useTranslation();
-  const next = i18n.language === 'ru' ? 'en' : 'ru';
+  const lang = i18n.language || 'ru';
+  const next = lang === 'ru' ? 'en' : 'ru';
   return (
     <button
       type="button"

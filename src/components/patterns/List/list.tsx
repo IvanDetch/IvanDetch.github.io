@@ -2,8 +2,13 @@ import React, { Fragment } from 'react';
 import type { ListProps } from '../../types';
 
 function ListInner<T>({ items, children, as: As = 'div', renderEmpty, ...rest }: ListProps<T>) {
+  const emptyContent =
+  typeof renderEmpty === 'function'
+    ? renderEmpty()
+    : renderEmpty ?? null;
+
   if (!items || items.length === 0) {
-    return <>{renderEmpty ? renderEmpty() : null}</>;
+    return <>{emptyContent}</>;
   }
   const content = items.map((it, i) => <Fragment key={i}>{children(it, i)}</Fragment>);
   return <As {...rest}>{content}</As>;

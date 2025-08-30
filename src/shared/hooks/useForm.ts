@@ -17,8 +17,12 @@ export function useForm<T extends Record<string, any>>(opts: {
 
   const handleChange = useCallback(
     (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-      const { name, value, type, checked } = e.target;
-      setValues((v) => ({ ...v, [name]: type === 'checkbox' ? checked : value }));
+      const { name, value, type } = e.target;
+      const nextValue = type === 'checkbox'
+        ? (e.target as HTMLInputElement).checked
+        : value;
+
+      setValues((v) => ({ ...v, [name]: nextValue }));
     },
     []
   );

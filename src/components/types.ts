@@ -70,6 +70,7 @@ export interface OperationListProps {
   pageSize?: number;
   useInfinite?: boolean;
   unlimited?: boolean;
+  renderActions?: (op: Operation, index: number) => React.ReactNode;
 }
 
 // Ecommerce component
@@ -155,15 +156,14 @@ export interface WithLoadingProps {
 
 // List
 /**
- * Generic List component with "Function as children" pattern.
+ * Generic List props
  * - items: T[]
- * - children: (item: T, index: number) => React.ReactNode
- * - renderEmpty?: () => React.ReactNode
- * - as?: keyof JSX.IntrinsicElements | React.ComponentType<any> (wrapper element)
+ * - children: render-fn (item, index) => ReactNode
+ * - as?: wrapper element/component
  */
-export interface ListProps<T> extends React.HTMLAttributes<HTMLElement> {
+export interface ListProps<T> extends Omit<React.HTMLAttributes<HTMLElement>, 'children'> {
   items: T[];
-  children: (item: T, index: number) => React.ReactNode;
-  as?: any;
-  renderEmpty?: () => React.ReactNode;
+  children: (item: T, index: number) => React.ReactNode; // function-as-children
+  as?: keyof JSX.IntrinsicElements | React.ComponentType<any>;
+  renderEmpty?: React.ReactNode | (() => React.ReactNode);
 }

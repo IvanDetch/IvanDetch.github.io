@@ -12,6 +12,7 @@ const OperationList: React.FC<OperationListProps> = ({
   pageSize = DEFAULT_PAGE,
   useInfinite = true,
   unlimited = false,
+  renderActions,
 }) => {
   const [data, setData] = useState<Operation[]>(() =>
     items.length ? items : Array.from({ length: pageSize }, () => createRandomOperation())
@@ -48,11 +49,7 @@ const OperationList: React.FC<OperationListProps> = ({
         const first = entries[0];
         if (first?.isIntersecting && hasMore) append(pageSize);
       },
-      {
-        root: null,
-        rootMargin: '200px',
-        threshold: 0,
-      }
+      { root: null, rootMargin: '200px', threshold: 0 }
     );
     ioRef.current.observe(target);
     return () => ioRef.current?.disconnect();
@@ -63,10 +60,17 @@ const OperationList: React.FC<OperationListProps> = ({
       <ul className={s.list} aria-live="polite">
         {data.map((op, idx) => (
           <li key={op.id + '-' + idx} className={s.item}>
-            <OperationItem operation={op} />
+            {/* Оборачиваем, чтобы действия уехали вправо */}
+            <div className={s.row}>
+              <OperationItem operation={op} />
+              {renderActions ? (
+                <div className={s.actions}>{renderActions(op, idx)}</div>
+              ) : null}
+            </div>
           </li>
         ))}
       </ul>
+
       {hasMore && (
         <>
           <div ref={sentinelRef} className={s.sentinel} aria-hidden />

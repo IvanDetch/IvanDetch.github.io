@@ -8,8 +8,8 @@
   "scripts": {
     "start": "webpack serve --mode development",
     "build": "webpack --mode production",
-    "predeploy": "npm run build-storybook",
-    "deploy": "npx gh-pages -d storybook-static",
+    "predeploy": "npm run build",
+    "deploy": "npx gh-pages -d dist",
     "test": "jest src",
     "lint": "eslint src --fix",
     "storybook": "storybook dev -p 6006",
@@ -68,6 +68,7 @@
     "webpack-dev-server": "^4.15.0"
   },
   "dependencies": {
+    "@types/react-router-dom": "^5.3.3",
     "@hookform/resolvers": "^5.2.1",
     "clsx": "^1.2.1",
     "i18next": "^25.3.2",
@@ -75,6 +76,7 @@
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.62.0",
     "react-i18next": "^15.6.1",
+    "react-router-dom": "^7.7.0",
     "yup": "^1.7.0"
   }
 }

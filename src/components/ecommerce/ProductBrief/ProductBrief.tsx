@@ -25,7 +25,7 @@ const ProductBrief: React.FC<ProductBriefProps & React.HTMLAttributes<HTMLDivEle
 
         <div className={s.footerRow}>
           <div className={s.unitPrice}>{price.toLocaleString('ru-RU')} ₽</div>
-          {children ?? <AddToCartButton count={0} />}
+          <div className={s.addCartButton}>{children ?? <AddToCartButton count={0} />}</div>
         </div>
       </div>
     </div>
