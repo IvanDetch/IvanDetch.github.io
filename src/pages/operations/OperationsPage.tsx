@@ -3,21 +3,23 @@ import { Link, useLocation } from 'react-router-dom';
 import { makeOperations } from '../../lib/demoData';
 let OperationList: any;
 try { OperationList = require('../../components/finance/Operations/OperationList').OperationList; } catch { }
+import { useTranslation } from 'react-i18next';
 
 const OperationsPage: React.FC = () => {
+  const { t } = useTranslation();
   const location = useLocation();
   const items = React.useMemo(() => makeOperations(20), []);
 
   return (
     <div style={{ padding: 16 }}>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-        <h2>Операции</h2>
+      <h2>{t('operations.title', 'Операции')}</h2>
         <Link
           to="/operations/new"
           state={{ backgroundLocation: location }}
           className="btn btn-primary"
         >
-          Добавить операцию
+          {t('operations.addOperation', 'Добавить операцию')}
         </Link>
       </div>
 

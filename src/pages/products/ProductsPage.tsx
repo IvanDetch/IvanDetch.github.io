@@ -4,15 +4,17 @@ import { makeProducts } from '../../lib/demoData';
 import { ProductListPattern } from '../../components/ecommerce/ProductList';
 import { ProductBrief } from '../../components/ecommerce/ProductBrief';
 import { AddToCartButton } from '../../components/ecommerce/AddToCartButton';
+import { useTranslation } from 'react-i18next';
 
 const ProductsPage: React.FC = () => {
+  const { t } = useTranslation();
   const location = useLocation();
   const items = React.useMemo(()=> makeProducts(24), []);
   return (
     <div style={{padding:16}}>
       <div style={{display:'flex', justifyContent:'space-between', alignItems:'center'}}>
-        <h2>Товары</h2>
-        <Link to="/products/new" state={{ backgroundLocation: location }} className="btn btn-primary">Добавить товар</Link>
+        <h2>{t('products.title', 'Товары')}</h2>
+        <Link to="/products/new" state={{ backgroundLocation: location }} className="btn btn-primary">{t('products.addNewProduct', 'Добавить товар')}</Link>
       </div>
       <ProductListPattern
         items={items as any}
@@ -21,7 +23,7 @@ const ProductsPage: React.FC = () => {
         renderItem={(p: any) => (
           <ProductBrief product={p}>
             <AddToCartButton count={0} />
-            <Link to={`/products/${p.id}/edit`} state={{ backgroundLocation: location }} className="btn btn-ghost">Редактировать</Link>
+            <Link to={`/products/${p.id}/edit`} state={{ backgroundLocation: location }} className="btn btn-ghost">{t('products.editProduct', 'Редактировать')}</Link>
           </ProductBrief>
         )}
       />

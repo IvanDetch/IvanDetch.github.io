@@ -1,8 +1,10 @@
 import React from 'react';
 import s from './AddToCartButton.module.css';
 import { AddToCartButtonProps } from '../../types';
+import { useTranslation } from 'react-i18next';
 
 const AddToCartButton: React.FC<AddToCartButtonProps> = ({ count = 0, background }) => {
+    const { t } = useTranslation();
     const handleAdd = () => alert('Товар добавлен в корзину');
     const handleIncrease = () => alert('Увеличить количество');
     const handleDecrease = () => alert('Уменьшить количество');
@@ -13,7 +15,7 @@ const AddToCartButton: React.FC<AddToCartButtonProps> = ({ count = 0, background
                 style={{ background }} 
                 onClick={handleAdd}
             >
-                В корзину
+                {t('products.addToCart', 'В корзину')}
             </button>
         );
     }
