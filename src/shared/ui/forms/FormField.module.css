@@ -1,0 +1,31 @@
+.row { 
+  display: grid; 
+  gap: 6px; 
+}
+.label { 
+  font-weight: 600; 
+}
+.input, .textarea, .select {
+  padding: 8px 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font: inherit;
+}
+.error { 
+  color: #b00020; 
+  font-size: 12px; 
+}
+.inline { 
+  display: flex; 
+  gap: 8px; 
+  align-items: center; 
+}
+.toggle { 
+  cursor: pointer; 
+  font-size: 12px; 
+  opacity: .7; 
+  background:none; 
+  color: var(--text);
+  border:none; 
+  padding:0; 
+}

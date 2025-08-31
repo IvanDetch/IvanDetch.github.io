@@ -1,0 +1,32 @@
+
+.form { 
+  display: grid; 
+  gap: 12px; 
+  max-width: 520px; 
+}
+.row { 
+  display: grid; 
+  gap: 6px; 
+}
+.inline { 
+  display: flex; 
+  gap: 8px; 
+  align-items: center; 
+}
+.label { 
+  font-weight: 600; 
+}
+.input, .textarea, .select {
+  padding: 8px 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font: inherit;
+}
+.error { 
+  color: #b00020; 
+  font-size: 12px; 
+}
+.actions { 
+  display: flex; 
+  gap: 8px; 
+}

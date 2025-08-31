@@ -1,0 +1,72 @@
+.card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  border: 1px solid #f0f0f0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: all 0.2s ease;
+  display: grid;
+  gap: 10px;
+  width: 100%;
+}
+.card:hover { 
+    box-shadow: 0 4px 12rem rgba(0, 0, 0, 0.1); 
+    transform: translateY(-2px); 
+}
+.header { 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.title { 
+    font-size: 18px; 
+    font-weight: 700; 
+    margin: 0; 
+    color: #2c3e50; 
+}
+.amount { 
+    font-weight: 800; 
+    font-size: 18px; 
+    line-height: 1; 
+    font-variant-numeric: tabular-nums; 
+}
+.income { 
+    color: #2e7d32; 
+} 
+.expense { 
+    color: #f52c16; 
+}
+.meta { 
+    display: flex; 
+    gap: 12px; 
+    font-size: 14px; 
+    color: #7f8c8d; 
+    font-weight: 500; 
+}
+.category { 
+    display: inline-block; 
+    background: linear-gradient(135deg, #4b6cb7, #182848); 
+    color: #fff; 
+    padding: 4px 8px; 
+    border-radius: 10px; 
+    font-size: 12px; 
+    font-weight: 600; 
+    text-transform: uppercase; 
+    letter-spacing: .5px; 
+    width: fit-content; 
+}
+.desc { 
+    margin-top: 2px; 
+    color: #34495e; 
+    font-size: 14px; 
+    line-height: 1.35; 
+}
+@media (max-width: 768px) { 
+    .title { 
+        font-size: 16px; 
+    } 
+    .amount { 
+        font-size: 16px; 
+    } 
+}

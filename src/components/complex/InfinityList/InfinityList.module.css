@@ -1,0 +1,11 @@
+.root {
+    overflow:auto;
+    background: var(--bg);
+}
+.holder { position:relative; }
+.item {
+    position:absolute;
+    left:0;
+    right:0;
+    color: var(--text);
+}

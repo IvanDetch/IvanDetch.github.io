@@ -1,0 +1,52 @@
+.wrap {
+    width: 100%;
+}
+
+.list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 12px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.item {
+    display: contents;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    padding: 16px 0 24px;
+}
+
+.moreBtn {
+    border: none;
+    padding: 10px 16px;
+    border-radius: 10px;
+    background: var(--btn-bg, #111);
+    color: var(--btn-fg, #fff);
+    cursor: pointer;
+}
+
+.moreBtn:hover {
+    opacity: .9;
+}
+
+.sentinel {
+    height: 1px;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    justify-content: space-between;
+}
+
+.actions {
+    margin-left: auto;
+    display: inline-flex;
+    gap: 8px;
+}
